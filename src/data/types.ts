@@ -1,0 +1,45 @@
+import { CSSProperties } from 'react';
+
+export interface ProductLine {
+  description: string;
+  quantity: string;
+  rate: string;
+}
+
+export interface Invoice {
+  logo: string;
+  logoWidth: number;
+  title: string;
+  companyName: string;
+  name: string;
+
+  billTo: string;
+  clientName: string;
+
+  invoiceDateLabel: string;
+  invoiceDate: string;
+  invoiceDueDateLabel: string;
+  invoiceDueDate: string;
+
+  productLineDescription: string;
+  productLineQuantity: string;
+  productLineQuantityRate: string;
+  productLineQuantityAmount: string;
+
+  productLines: ProductLine[];
+
+  subTotalLabel: string;
+  discountLabel: string;
+
+  totalLabel: string;
+  currency: string;
+
+  notesLabel: string;
+  notes: string;
+  termLabel: string;
+  term: string;
+}
+
+export interface CSSClasses {
+  [key: string]: CSSProperties;
+}
