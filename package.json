@@ -2,23 +2,21 @@
   "name": "invoice-generator",
   "version": "0.2.1",
   "private": true,
-  "homepage": "https://tuanpham-dev.github.io/react-invoice-generator/",
+  "homepage": "https://bitalizer.github.io/react-invoice-generator/",
   "dependencies": {
     "@react-pdf/renderer": "^3.1.12",
-    "@testing-library/jest-dom": "^6.1.2",
-    "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^29.5.4",
     "@types/node": "^20.5.6",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "date-fns": "^2.30.0",
-    "rc-slider": "10.2.1",
     "react": "^18.2.0",
     "react-datepicker": "^4.16.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
+    "date-fns": "^2.30.0",
+    "rc-slider": "10.2.1",
     "react-textarea-autosize": "^8.5.3",
-    "typescript": "~5.2.2"
+    "typescript": "~5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,7 +42,8 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/react": "^14.0.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
     "@types/date-fns": "^2.6.0",
     "@types/rc-slider": "^9.3.0",
     "@types/react-datepicker": "^4.15.0",

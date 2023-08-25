@@ -17,10 +17,10 @@ Font.register({
   family: 'Work Sans',
   fonts: [
     {
-      src: 'http://fonts.gstatic.com/s/worksans/v18/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K0nXNigDp6_cOyA.ttf',
+      src: 'https://fonts.gstatic.com/s/worksans/v18/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K0nXNigDp6_cOyA.ttf',
     },
     {
-      src: 'http://fonts.gstatic.com/s/worksans/v18/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K5fQNigDp6_cOyA.ttf',
+      src: 'https://fonts.gstatic.com/s/worksans/v18/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K5fQNigDp6_cOyA.ttf',
       fontWeight: 600,
     },
   ],
@@ -137,7 +137,6 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
   }, [invoice.productLines]);
 
   useEffect(() => {
-    console.log(invoice.discountLabel);
     const match = invoice.discountLabel.match(/(\d+)%/);
     const discountRate = match ? parseFloat(match[1]) : 0;
     const discount = subTotal ? (subTotal * discountRate) / 100 : 0;
@@ -393,16 +392,29 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               </View>
               <View className="flex" pdfMode={pdfMode}>
                 <View className="w-50 p-5" pdfMode={pdfMode}>
-                  <EditableInput
-                    value={invoice.discountLabel}
-                    onChange={(value) => handleChange('discountLabel', value)}
-                    pdfMode={pdfMode}
-                  />
+                  {discount && discount > 0 ? (
+                    <EditableInput
+                      value={invoice.discountLabel}
+                      onChange={(value) => handleChange('discountLabel', value)}
+                      pdfMode={pdfMode}
+                    />
+                  ) : (
+                    <EditableInput
+                      value={invoice.discountLabel}
+                      onChange={(value) => handleChange('discountLabel', value)}
+                    />
+                  )}
                 </View>
                 <View className="w-50 p-5" pdfMode={pdfMode}>
-                  <Text className="right bold dark" pdfMode={pdfMode}>
-                    {discount?.toFixed(2)}
-                  </Text>
+                  {discount && discount > 0 ? (
+                    <Text className="right bold dark" pdfMode={pdfMode}>
+                      {discount.toFixed(2)}
+                    </Text>
+                  ) : (
+                    <Text className="right bold dark">
+                      {discount?.toFixed(2)}
+                    </Text>
+                  )}
                 </View>
               </View>
               <View className="flex bg-green p-5" pdfMode={pdfMode}>
