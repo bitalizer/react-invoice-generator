@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react-invoice-generator/static/css/main.810c561c.css",
-    "main.js": "/react-invoice-generator/static/js/main.225aac72.js",
+    "main.css": "/react-invoice-generator/static/css/main.6e75c3dc.css",
+    "main.js": "/react-invoice-generator/static/js/main.43d50f80.js",
     "service-worker.js": "/react-invoice-generator/service-worker.js",
     "static/media/download.svg": "/react-invoice-generator/static/media/download.18bbd42e6b29fac26103.svg",
     "index.html": "/react-invoice-generator/index.html",
     "static/media/resize.svg": "/react-invoice-generator/static/media/resize.f719defd23407ef1b1e1.svg",
     "static/media/remove.svg": "/react-invoice-generator/static/media/remove.ecaaf36889311f12afc4.svg",
-    "main.810c561c.css.map": "/react-invoice-generator/static/css/main.810c561c.css.map",
-    "main.225aac72.js.map": "/react-invoice-generator/static/js/main.225aac72.js.map"
+    "main.6e75c3dc.css.map": "/react-invoice-generator/static/css/main.6e75c3dc.css.map",
+    "main.43d50f80.js.map": "/react-invoice-generator/static/js/main.43d50f80.js.map"
   },
   "entrypoints": [
-    "static/css/main.810c561c.css",
-    "static/js/main.225aac72.js"
+    "static/css/main.6e75c3dc.css",
+    "static/js/main.43d50f80.js"
   ]
 }
