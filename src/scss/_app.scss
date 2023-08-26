@@ -37,9 +37,6 @@
   position: relative;
   background: #fff;
   box-shadow: 0 0 17px 0 rgba(16, 40, 73, 0.09);
-}
-
-.content {
   padding: 40px 35px;
 }
 
@@ -64,6 +61,18 @@
     width: 100%;
     height: 100%;
   }
+}
+
+.logo-container {
+  margin-top: -40px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.logo {
+  display: inline-block;
+  margin-left: -35px;
+  margin-right: -35px;
 }
 
 .image {
@@ -104,6 +113,8 @@
 
 .image__img {
   display: block;
+  width: 100%;
+  max-width: none;
 }
 
 .image__change {

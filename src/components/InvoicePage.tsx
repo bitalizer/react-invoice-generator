@@ -154,21 +154,19 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
       <Page className="invoice-wrapper" pdfMode={pdfMode}>
         {!pdfMode && <Download data={invoice} />}
 
-        <View className="w-100" pdfMode={pdfMode}>
+        <View className="w-100 logo-container" pdfMode={pdfMode}>
           <View className="w-100" pdfMode={pdfMode}>
             <EditableFileImage
               className="logo"
               placeholder="Your banner"
               value={invoice.logo}
-              width={invoice.logoWidth}
               pdfMode={pdfMode}
               onChangeImage={(value) => handleChange('logo', value)}
-              onChangeWidth={(value) => handleChange('logoWidth', value)}
             />
           </View>
         </View>
 
-        <View className="content" pdfMode={pdfMode}>
+        <View pdfMode={pdfMode}>
           <View className="flex" pdfMode={pdfMode}>
             <View className="w-50" pdfMode={pdfMode}>
               <EditableInput
@@ -340,7 +338,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
                 <View className="w-17 p-4-8 pb-10" pdfMode={pdfMode}>
                   <EditableInput
                     className="dark right"
-                    value={productLine.rate}
+                    value={parseFloat(productLine.rate).toFixed(2)}
                     onChange={(value) =>
                       handleProductLineChange(i, 'rate', value)
                     }
@@ -405,16 +403,18 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
                     />
                   )}
                 </View>
-                <View className="w-50 p-5" pdfMode={pdfMode}>
-                  {discount && discount > 0 ? (
-                    <Text className="right bold dark" pdfMode={pdfMode}>
-                      {discount.toFixed(2)}
-                    </Text>
-                  ) : (
-                    <Text className="right bold dark">
-                      {discount?.toFixed(2)}
-                    </Text>
-                  )}
+                <View
+                  className="w-50 p-5"
+                  pdfMode={pdfMode && discount !== undefined && discount > 0}
+                >
+                  <Text
+                    className="right bold dark"
+                    pdfMode={pdfMode && discount !== undefined && discount > 0}
+                  >
+                    {(typeof discount === 'undefined' ? 0 : discount).toFixed(
+                      2
+                    )}
+                  </Text>
                 </View>
               </View>
               <View className="flex bg-green p-5" pdfMode={pdfMode}>
@@ -453,7 +453,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               pdfMode={pdfMode}
             />
             <EditableTextarea
-              className="w-100"
+              className="w-100 fs-10"
               rows={2}
               value={invoice.notes}
               onChange={(value) => handleChange('notes', value)}
@@ -468,7 +468,7 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               pdfMode={pdfMode}
             />
             <EditableTextarea
-              className="w-100"
+              className="w-100 fs-10"
               rows={2}
               value={invoice.term}
               onChange={(value) => handleChange('term', value)}

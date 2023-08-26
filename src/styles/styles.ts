@@ -122,6 +122,10 @@ const styles: CSSClasses = {
     fontWeight: 'bold',
   },
 
+  'fs-10': {
+    fontSize: '10px',
+  },
+
   'fs-20': {
     fontSize: '20px',
   },
@@ -134,9 +138,6 @@ const styles: CSSClasses = {
     fontFamily: 'Work Sans',
     fontSize: '13px',
     color: '#555',
-  },
-
-  content: {
     padding: '40px 35px',
   },
 
@@ -145,7 +146,26 @@ const styles: CSSClasses = {
   },
 
   logo: {
+    display: 'inline-block',
+    marginRight: '-35px',
+    marginLeft: '-35px',
+  },
+
+  image: {
+    position: 'relative',
+    display: 'inline-block',
+  },
+
+  image__img: {
     display: 'block',
+    width: '100%',
+    maxWidth: 'none',
+  },
+
+  'logo-container': {
+    marginTop: '-40px',
+    paddingBottom: '40px',
+    position: 'relative',
   },
 
   'text-black': {
