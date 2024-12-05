@@ -40,10 +40,16 @@ const Download: FC<Props> = ({ data, setData }) => {
     const blob = new Blob([JSON.stringify(debounced)], {
       type: 'text/plain;charset=utf-8',
     })
-    FileSaver(blob, title + '.template')
+    FileSaver(blob, templateName + '.template')
   }
 
-  const title = data.invoiceTitle ? data.invoiceTitle.toLowerCase() : 'invoice'
+  const now = new Date();
+  const formattedDate = `${String(now.getDate()).padStart(2, '0')}_${String(now.getMonth() + 1).padStart(2, '0')}_${now.getFullYear()}`;
+  const title = (data.title ? data.title.toLowerCase().replace(/\s+/g, '_') : 'invoice') + '_' + formattedDate;
+
+  const templateName = (data.clientName ? data.clientName.toLowerCase().replace(/\s+/g, '_') : 'client');
+  
+
   return (
     <div className={'download-pdf '}>
       <PDFDownloadLink

@@ -4,6 +4,7 @@ const colorDark = '#222'
 const colorDark2 = '#666'
 const colorGray = '#e3e3e3'
 const colorWhite = '#fff'
+const colorBlack = '#000'
 
 const styles: CSSClasses = {
   dark: {
@@ -20,6 +21,10 @@ const styles: CSSClasses = {
 
   'bg-gray': {
     backgroundColor: colorGray,
+  },
+
+  'bg-black': {
+    backgroundColor: colorBlack,
   },
 
   flex: {
@@ -105,6 +110,10 @@ const styles: CSSClasses = {
     padding: '5px',
   },
 
+  'p-10': {
+    padding: '10px',
+  },
+
   'pb-10': {
     paddingBottom: '10px',
   },
@@ -114,7 +123,11 @@ const styles: CSSClasses = {
   },
 
   bold: {
-    fontWeight: 'bold',
+    fontWeight: '600',
+  },
+
+  'fs-16': {
+    fontSize: '16px',
   },
 
   'fs-20': {
@@ -126,19 +139,24 @@ const styles: CSSClasses = {
   },
 
   page: {
-    fontFamily: 'Nunito',
-    fontSize: '13px',
-    color: '#555',
+    fontFamily: 'Inter',
+    fontSize: '11px',
+    color: '#000',
     padding: '40px 35px',
+  },
+
+  'header-title': {
+    padding: '40px 40px',
   },
 
   span: {
     padding: '4px 12px 4px 0',
   },
 
-  logo: {
-    display: 'block',
-  },
+  header: {
+    margin: '-40px -35px',
+    paddingBottom: '60px',
+  }
 }
 
 export default styles

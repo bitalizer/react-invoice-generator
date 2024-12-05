@@ -19,10 +19,10 @@ const EditableCalendarInput: FC<Props> = ({ className, value, selected, onChange
         <Text style={compose('span ' + (className ? className : ''))}>{value}</Text>
       ) : (
         <DatePicker
-          className={'input ' + (className ? className : '')}
+          className={'input ' + (className ? className : 'flex-item')}
           selected={selected}
           onChange={onChange ? (date) => onChange(date) : () => null}
-          dateFormat="MMM dd, yyyy"
+          dateFormat="dd.MM.yyyy"
         />
       )}
     </>

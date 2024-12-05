@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://tuanpham-dev.github.io/react-invoice-generator/",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 4000",
     "build": "tsc && vite build",
     "lint": "prettier -c .",
     "lint:write": "prettier -w .",
