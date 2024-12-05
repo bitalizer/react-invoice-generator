@@ -175,6 +175,18 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
               onChange={(value) => handleChange('phone', value)}
               pdfMode={pdfMode}
             />
+            <EditableInput
+              placeholder="Personal code"
+              value={invoice.personalCode}
+              onChange={(value) => handleChange('personalCode', value)}
+              pdfMode={pdfMode}
+            />
+            <EditableInput
+              placeholder="Bank Account"
+              value={invoice.bankAccount}
+              onChange={(value) => handleChange('bankAccount', value)}
+              pdfMode={pdfMode}
+            />
           </View>
 
           <View className="w-50" pdfMode={pdfMode}>
@@ -245,23 +257,6 @@ const InvoicePage: FC<Props> = ({ data, pdfMode, onChange }) => {
                       date && !Array.isArray(date) ? format(date, dateFormat) : '',
                     )
                   }
-                  pdfMode={pdfMode}
-                />
-              </View>
-            </View>
-            <View className="flex mb-5" pdfMode={pdfMode}>
-              <View className="" pdfMode={pdfMode}>
-                <EditableInput
-                  className="bold"
-                  value={invoice.bankAccountLabel}
-                  onChange={(value) => handleChange('bankAccountLabel', value)}
-                  pdfMode={pdfMode}
-                />
-              </View>
-              <View className="w-45" pdfMode={pdfMode}>
-                <EditableInput
-                  value={invoice.bankAccount}
-                  onChange={(value) => handleChange('bankAccount', value)}
                   pdfMode={pdfMode}
                 />
               </View>

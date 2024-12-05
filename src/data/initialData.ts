@@ -21,7 +21,7 @@ export const initialInvoice: Invoice = {
   executionFinishDate: '',
   compilationDateLabel: 'Date of compilation:',
   compilationDate: '',
-  bankAccountLabel: 'Bank Account:',
+  personalCode: '',
   bankAccount: '',
   productLineDescription: 'Item Description',
   productLineQuantity: 'Qty',

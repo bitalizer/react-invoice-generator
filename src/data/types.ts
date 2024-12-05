@@ -28,7 +28,7 @@ export const TInvoice = z.object({
   executionFinishDate: z.string(),
   compilationDateLabel: z.string(),
   compilationDate: z.string(),
-  bankAccountLabel: z.string(),
+  personalCode: z.string(),
   bankAccount: z.string(),
   productLineDescription: z.string(),
   productLineQuantity: z.string(),
